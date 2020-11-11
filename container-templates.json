@@ -1,0 +1,32 @@
+[
+    {
+        "type": 1,
+        "title": "duplicati",
+        "description": "Backup Software",
+        "logo": "https://www.duplicati.com/images/duplicati-fb-share-v1.png",
+        "image": "duplicati/duplicati:latest",
+        "name": "duplicati",
+        "ports": [
+            "8200:8200/tcp"
+        ],
+        "volumes": [
+            {
+                "container": "/data",
+                "volume": "duplicati_data"
+            
+            },
+            {
+                "container": "/srv/working_dir",
+                "bind": "/srv/dev-disk-by-label-system-data-ssd/duplicati-temp",
+                "readonly": false
+            },
+            {
+                "container": "/srv/data",
+                "bind": "/srv/dev-disk-by-label-btrfs-pool",
+                "readonly": false
+            }
+        ],
+        "restart_policy": "unless-stopped",
+        "hostname": "duplicati"
+    }
+]
