@@ -6,6 +6,7 @@
         "logo": "https://www.duplicati.com/images/duplicati-fb-share-v1.png",
         "image": "duplicati/duplicati:latest",
         "name": "duplicati",
+        "platform": "linux",
         "ports": [
             "8200:8200/tcp"
         ],
@@ -27,6 +28,6 @@
             }
         ],
         "restart_policy": "unless-stopped",
-        "hostname": "duplicati"
+        "hostname": "omv"
     }
 ]
